@@ -181,8 +181,8 @@ export default {
 
                     case '/panel/password':
 
-                        let passAuth = await Authenticate(request, env);
-                        if (!passAuth) return new Response('Unauthorized!', { status: 401 });           
+                        //let passAuth = await Authenticate(request, env);
+                        //if (!passAuth) return new Response('Unauthorized!', { status: 401 });           
                         const newPwd = await request.text();
                         const oldPwd = await env.bpb.get('pwd');
                         if (newPwd === oldPwd) return new Response('Please enter a new Password!', { status: 400 });
